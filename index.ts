@@ -87,7 +87,7 @@ const viewHistory = () => {
   } else {
     history.forEach((entry, index) => {
       console.log(
-        `${index + 1}. Purchased Number: ${entry.number}, Bet Amount: ${entry.bet} บาท, Prize Amount: ${entry.prize.toLocaleString()} baht`
+        `${index + 1}. Purchased Number: ${entry.number}, Bet Amount: ${entry.bet} baht, Prize Amount: ${entry.prize.toLocaleString()} baht`
       );
       totalPrize += entry.prize;
     });
