@@ -18,7 +18,7 @@
 3. The program will check if the number you entered matches the lottery number and display the prize amount you won.
 4. Choose the history option to view the prize history and the total amount of money you have won.
 
-**Ticket Payout Calculation:**
+## Ticket Payout Calculation
 
 - 1 digit = 10 times of bet example customer buy number 6 for 100 baht and the result is 123456 then the prize is 1000 baht
 - 2 digit = 100 times of bet example customer buy number 56 for 100 baht and the result is 123456 then the prize is 10000 baht
