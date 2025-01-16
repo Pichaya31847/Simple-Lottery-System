@@ -47,17 +47,30 @@ const buyTicket = async () => {
     {
       type: "input",
       name: "betNumber",
-      message: "Please enter the 6-digit number you want to buy:",
-      validate: (input) =>
-        /^\d{6}$/.test(input) ? true : "The number must be exactly 6 digits!",
+      message: "Please enter a number (up to 6 digits):",
+      validate: (input) => {
+        if (!/^\d{1,6}$/.test(input)) {
+          return "The number must contain 1 to 6 digits only!";
+        }
+        return true;
+      },
     },
   ]);
+
+  const completedNumber =
+  betNumber.length < 6
+    ? Array.from({ length: 6 - betNumber.length }, () =>
+        Math.floor(Math.random() * 10)
+      ).join("") + betNumber
+    : betNumber;
+
+  console.log(`Your completed number is: ${completedNumber}`);
 
   const { betAmount } = await inquirer.prompt([
     {
       type: "input",
       name: "betAmount",
-      message: `Please enter the amount you want to bet for the number ${betNumber}:`,
+      message: `Please enter the amount you want to bet for the number ${completedNumber}:`,
       validate: (input) => {
         const number = Number(input);
         return number > 0 ? true : "The amount must be greater than 0!";
@@ -66,13 +79,13 @@ const buyTicket = async () => {
     },
   ]);
 
-  const prize = calculatePrize(betNumber, betAmount);
-  history.push({ number: betNumber, bet: betAmount, prize });
+  const prize = calculatePrize(completedNumber, betAmount);
+  history.push({ number: completedNumber, bet: betAmount, prize });
 
   if (prize > 0) {
-    console.log(`🎉 Congratulations! You won with the number ${betNumber} and received a prize of ${prize.toLocaleString()} baht`);
+    console.log(`🎉 Congratulations! You won with the number ${completedNumber} and received a prize of ${prize.toLocaleString()} baht`);
   } else {
-    console.log(`😢 Sorry, you did not win with the number ${betNumber}`);
+    console.log(`😢 Sorry, you did not win with the number ${completedNumber}`);
   }
 
   await mainMenu();

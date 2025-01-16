@@ -14,7 +14,8 @@
 
 ## How To Play
 1. When the program starts, there will be two commands for you to choose from.
-2. Choose the buy option to enter a 6-digit number you want to bet on, and enter the amount of money you want to bet.
+2. Choose the buy option to enter a number you want to bet on, and enter the amount of money you want to bet. 
+(Note: If you enter less than 6 digits, the system will generate random numbers at the front to make it a 6-digit number.)
 3. The program will check if the number you entered matches the lottery number and display the prize amount you won.
 4. Choose the history option to view the prize history and the total amount of money you have won.
 
