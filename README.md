@@ -35,4 +35,4 @@
 | **Lottery Number (6 digits)**  | The system will randomly generate a 6-digit lottery number within the range of 000000 to 999999.                        |
 | **Bet Amount**                 | The system will prompt the user to enter the bet amount and ensure that it is a positive value.                         |
 | **Prize Calculation**          | The prize will be calculated based on the number of digits that match the lottery number (from 1 to 6 digits).          |
-| **Winning History**            | The system will store the user's winning history.                                                                        |
+| **History**            | The system will store the user's history.                                                                        |
